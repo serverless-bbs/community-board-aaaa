@@ -1,0 +1,43 @@
+{
+  "name": "community-board-aaaa",
+  "main": "worker/src/index.ts",
+  "compatibility_date": "2025-06-20",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "vars": {
+    "RP_NAME": "Community Board",
+    "RP_SUBTITLE": "An opensource-friendly forum",
+    "R2_PUBLIC_URL": "/r2",
+    "REGISTER_ENABLED": true
+  },
+  "assets": {
+    "directory": "./ui/dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*", "/r2/*"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "community-board-aaaa",
+      "database_id": "8f6ef903-bf3f-473f-ba92-5a26f9a8ccd0",
+      "migrations_dir": "worker/migrations"
+    }
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "KV_SESSIONS",
+      "id": "893e8e8564604d3b8a0fe559c0737bb7"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "R2_BUCKET",
+      "bucket_name": "community-board-aaaa"
+    }
+  ],
+  "dev": {
+    "port": 8787
+  }
+}
